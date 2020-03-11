@@ -49,7 +49,7 @@ map <F2> /\s\+$<CR>
 "toggle search highlight
 map <F3> <ESC>:set hls! <CR>
 "insert line errlog (ERR_DEBUG, 'got here 1.0\n')
-map <F4> <ESC>ierrlog ($ERR_USER, "got here 1.0");<ESC>==
+map <F4> <ESC>oerrlog ($ERR_USER, "got here 1.0");<ESC>==
 
 " useful commands (save key presses)
 nmap c- ct_
