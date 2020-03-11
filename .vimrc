@@ -14,7 +14,7 @@ set tabstop=3                              "tabs equal 3 spaces
 set shiftwidth=3                           "indents are 3 spaces
 set expandtab                              "tabs are counted as spaces
 set cindent                                "uses C syntax for indenting
-set dictionary+=/usr/share/dict/words      "dictionary file
+set dictionary+=/usr/share/dict/words      "dictionary file ^x^k to use
 set guifont=Luxi\ Mono\ 10                 "font
 set scrolloff=2                            "scrolls when 2 lines from edge
 set nowrap                                 "text dosent wrap
@@ -33,8 +33,13 @@ set ignorecase
 set smartcase
 
 " Setting comment string for commentry to work
-autocmd FileType perl,pm,sh setl cms=#\ %s
-autocmd FileType vim        setl cms=\"\ %s
+autocmd FileType perl,pm,sh,cfg setl cms=#\ %s
+autocmd FileType vim            setl cms=\"\ %s
+autocmd FileType html           setl cms=<!--\%s\-->
+
+" vim gitgutter recommended update time (to see changes immediatly)
+" Default is 4000
+set updatetime=100
 
 "KEY MAPPINIGS
 "find trailing whitespace
@@ -54,6 +59,9 @@ nmap c\ ct\
 " highlighting word under cursor dosen't jump to next match
 nmap * *N
 
+" escape without pressing escape
+imap jk <ESC>
+
 " reloading and opening vimrc
 map <F5> <ESC>:so $MYVIMRC<CR>
 map <F6> <ESC>:vs $MYVIMRC<CR>
@@ -64,8 +72,16 @@ nmap <C-p> yyp
 " opening tag location in new split
 nmap <C-\> :vs<CR><C-]>
 
-" escape without pressing escape
-imap jk <ESC>
+" moving splits right and left
+nmap <C-l> <C-w>8<
+nmap <C-k> <C-w>8>
+
+" Toggling GitGutter and GitGutter highlighting
+map <F7> <ESC>:GitGutterToggle<CR>
+map <F8> <ESC>:GitGutterLineHighlightsToggle<CR>
+
+" toggle underlining spelling mistakes
+map <F9> <ESC>:set spell!<CR>
 
 " search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
