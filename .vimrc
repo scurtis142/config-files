@@ -5,7 +5,18 @@ set bg=dark
 "MOUSE
 if has("mouse")
 	set mouse=a
+   " This has something to do with using mouse in vim in tmux but im not sure how it works
+   if has("mouse=sgr")
+      set ttymouse=sgr
+   else
+      set ttymouse=xterm2
+   end
 endif
+" This has something to do with using mouse in vim in tmux but im not sure how it works
+"if &term =~ '^screen'
+"    " tmux knows the extended mouse mode
+"    set ttymouse=xterm2
+"endif
 
 "OPTIONS
 syntax on                                  "syntax highlighting on by default
@@ -23,10 +34,11 @@ set splitright                             "open new splits to the RHS
 set hlsearch                               "highlighting on by default
 set incsearch                              "show matches while searching
 set backspace=indent,eol,start             "backspace these characters by default
-set foldmethod=syntax                      "zc, zo will open and close folds in braces
+set whichwrap+=h,l                         "h and l move to start and end of next & prev lines. NOTE: UNSAFE AND MAY BREAK PLUGINS
+"set foldmethod=syntax                      "zc, zo will open and close folds in braces
 
-" Akips tags file
-set tags=/home/simon/wk/akips/tags
+" Tags file
+set tags=/home/simon/Documents/Thesis/tags
 
 " Case insensitive searching
 set ignorecase
@@ -82,6 +94,11 @@ map <F8> <ESC>:GitGutterLineHighlightsToggle<CR>
 
 " toggle underlining spelling mistakes
 map <F9> <ESC>:set spell!<CR>
+
+" see syntax group
+map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
