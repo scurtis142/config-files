@@ -74,6 +74,9 @@ nmap * *N
 " escape without pressing escape
 imap jk <ESC>
 
+" colon more useful than semicolon
+nnoremap ; :
+
 " reloading and opening vimrc
 map <F5> <ESC>:so $MYVIMRC<CR>
 map <F6> <ESC>:vs $MYVIMRC<CR>
