@@ -88,15 +88,37 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -l'
 alias moss='ssh s4431892@moss.labs.eait.uq.edu.au'
 alias laptop='ssh simon@simon-Aspire-F5-572G'
 alias docs='cd /home/simon/Documents && ls -l'
 alias thesisdir='cd /home/simon/Documents/Thesis && ls -l'
 alias thesispc='ssh simon@192.168.1.101'
 alias comp3400='cd /home/simon/Documents/COMP3400 && ls -l'
+
+# Some useful aliases
+alias h='fc -l'
+alias j=jobs
+alias m="$PAGER"
+alias ll='ls -laFo'
+alias l='ls -l'
+alias g='egrep -i'
+
+# Custom
+alias ls='ls -G'
+alias wkdir='cd ~/wk/akips'
+alias mibs='cd ~/wk/akips/mib'
+alias su='su -'
+alias ag='ag --ignore-dir mib'
+alias findf='find . -name'
+alias dater='date -r'
+alias weather='curl http://v2.wttr.in/Brisbane'
+alias c='clear'
+alias cs='clear && git status'
+alias cl='clear && ls -l'
+alias cls='clear && ls'
+alias cla='clear && ls -lah'
+
+
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
