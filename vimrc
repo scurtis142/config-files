@@ -8,8 +8,8 @@ if has("mouse")
    " This has something to do with using mouse in vim in tmux but im not sure how it works
    if has("mouse=sgr")
       set ttymouse=sgr
-   else
-      set ttymouse=xterm2
+  "  else
+  "     set ttymouse=xterm2
    end
 endif
 " This has something to do with using mouse in vim in tmux but im not sure how it works
