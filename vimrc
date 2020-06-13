@@ -44,12 +44,15 @@ let mapleader=","                          "set <Leader> key to comma
 
 " Tags file
 set tags=~/tags
+au BufRead,BufNewFile *.md setlocal textwidth=100 "Set text to wrap at 100 characters for md files
 
 
 " Setting comment string for commentry to work
 autocmd FileType perl,pm,sh,cfg,text setl cms=#\ %s
 autocmd FileType vim            setl cms=\"\ %s
 autocmd FileType html           setl cms=<!--\%s\-->
+autocmd FileType haskell        setl cms=--\ %s
+autocmd FileType python         setl cms=#\ %s
 
 " vim gitgutter recommended update time (to see changes immediatly)
 " Default is 4000
@@ -90,6 +93,7 @@ nmap c- ct_
 nmap c' ct"
 nmap c* ct*
 nmap c\ ct\
+nmap d' dt"
 
 " shortcut to set text width
 cmap stw set textwidth=
@@ -120,3 +124,5 @@ map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 " search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" set colorcolumn=80 to set a vertical bar at 80 characters
