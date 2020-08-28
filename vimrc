@@ -35,7 +35,13 @@ set hlsearch                               "highlighting on by default
 set incsearch                              "show matches while searching
 set backspace=indent,eol,start             "backspace these characters by default
 set whichwrap+=h,l                         "h and l move to start and end of next & prev lines. NOTE: UNSAFE AND MAY BREAK PLUGINS
-"set foldmethod=syntax                      "zc, zo will open and close folds in braces
+let mapleader=","                          "<Leader> key
+"set foldmethod=syntax                     "zc, zo will open and close folds in braces
+
+"NOTES:
+"gq to reformat text with correct textwidth
+"set list to see control characters (set nolist to undo)
+
 
 " Tags file
 set tags=/home/simon/Documents/Thesis/tags
@@ -53,6 +59,9 @@ autocmd FileType html           setl cms=<!--\%s\-->
 " Default is 4000
 set updatetime=100
 
+" gitgutter undo a hunk
+nmap <Leader>u :GitGutterUndoHunk<CR>
+
 "KEY MAPPINIGS
 "find trailing whitespace
 map <F2> /\s\+$<CR>
@@ -66,7 +75,11 @@ map <F4> <ESC>oerrlog ($ERR_USER, "got here 1.0");<ESC>==
 " useful commands (save key presses)
 nmap c- ct_
 nmap c' ct"
+nmap c* ct*
 nmap c\ ct\
+
+" shortcut to set text width
+cmap stw set textwidth
 
 " highlighting word under cursor dosen't jump to next match
 nmap * *N
