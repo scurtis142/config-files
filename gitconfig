@@ -1,0 +1,14 @@
+[user]
+	name = Simon Curtis
+	email = simon.curtis@akips.com
+[alias]
+	lns = log --name-status
+	prettylog = log --oneline --decorate --graph --all
+	dc = diff --cached
+	pl = prettylog
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[core]
+	editor = vim
+[diff "color"]
+	commit = yellow
