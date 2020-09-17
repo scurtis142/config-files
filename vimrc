@@ -31,11 +31,12 @@ set scrolloff=2                            "scrolls when 2 lines from edge
 set nowrap                                 "text dosent wrap
 set re=1                                   "use old regex version.. for speedup
 set splitright                             "open new splits to the RHS
+set laststatus=2                           "always display status line
 set hlsearch                               "highlighting on by default
 set incsearch                              "show matches while searching
 set backspace=indent,eol,start             "backspace these characters by default
 set whichwrap+=h,l                         "h and l move to start and end of next & prev lines. NOTE: UNSAFE AND MAY BREAK PLUGINS
-let mapleader=","                          "<Leader> key
+let mapleader=","                          "set <Leader> key to comma
 "set foldmethod=syntax                     "zc, zo will open and close folds in braces
 
 "NOTES:
@@ -51,7 +52,7 @@ set ignorecase
 set smartcase
 
 " Setting comment string for commentry to work
-autocmd FileType perl,pm,sh,cfg setl cms=#\ %s
+autocmd FileType perl,pm,sh,cfg,text setl cms=#\ %s
 autocmd FileType vim            setl cms=\"\ %s
 autocmd FileType html           setl cms=<!--\%s\-->
 
@@ -65,6 +66,10 @@ nmap <Leader>u :GitGutterUndoHunk<CR>
 "KEY MAPPINIGS
 "find trailing whitespace
 map <F2> /\s\+$<CR>
+
+" delete trailing whitespace
+nmap <Leader>1 :%s/\s\+$//g<CR>
+
 "display current time
 "map <F3> :echo 'Current time is '.strftime('%c')<CR>
 "toggle search highlight
@@ -79,7 +84,7 @@ nmap c* ct*
 nmap c\ ct\
 
 " shortcut to set text width
-cmap stw set textwidth
+cmap stw set textwidth=
 
 " highlighting word under cursor dosen't jump to next match
 nmap * *N
