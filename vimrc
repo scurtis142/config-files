@@ -18,13 +18,17 @@ set number                                 "line numbers
 set tabstop=3                              "tabs equal 3 spaces
 set shiftwidth=3                           "indents are 3 spaces
 set expandtab                              "tabs are counted as spaces
-set cindent                                "uses C syntax for indenting
+set nocindent                              "don't use C syntax for indenting
+set autoindent                             "copy indent from current line when starting a new line
 set dictionary+=/usr/share/dict/words      "dictionary file ^x^k to use
 set guifont=Luxi\ Mono\ 10                 "font
 set scrolloff=2                            "scrolls when 2 lines from edge
 set nowrap                                 "text dosent wrap
 set re=1                                   "use old regex version.. for speedup
 set splitright                             "open new splits to the RHS
+set shiftround                             "Always indent/outdent to nearest tabstop
+set smarttab                               "A <Tab> in front of a line inserts 'shiftwidth' spaces
+set ignorecase smartcase                   "case insensitive searching
 set laststatus=2                           "always display status line
 set hlsearch                               "highlighting on by default
 set incsearch                              "show matches while searching
@@ -40,9 +44,6 @@ let mapleader=","                          "set <Leader> key to comma
 " Tags file
 set tags=/home/simon/Documents/Thesis/tags
 
-" Case insensitive searching
-set ignorecase
-set smartcase
 
 " Setting comment string for commentry to work
 autocmd FileType perl,pm,sh,cfg,text setl cms=#\ %s
