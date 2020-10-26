@@ -8,15 +8,9 @@ if has("mouse")
    " This has something to do with using mouse in vim in tmux but im not sure how it works
    if has("mouse=sgr")
       set ttymouse=sgr
-  "  else
-  "     set ttymouse=xterm2
    end
 endif
-" This has something to do with using mouse in vim in tmux but im not sure how it works
-"if &term =~ '^screen'
-"    " tmux knows the extended mouse mode
-"    set ttymouse=xterm2
-"endif
+
 
 "OPTIONS
 syntax on                                  "syntax highlighting on by default
@@ -37,7 +31,6 @@ set incsearch                              "show matches while searching
 set backspace=indent,eol,start             "backspace these characters by default
 set whichwrap+=h,l                         "h and l move to start and end of next & prev lines. NOTE: UNSAFE AND MAY BREAK PLUGINS
 let mapleader=","                          "set <Leader> key to comma
-"set foldmethod=syntax                     "zc, zo will open and close folds in braces
 
 "NOTES:
 "gq to reformat text with correct textwidth
