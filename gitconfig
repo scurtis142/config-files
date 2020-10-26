@@ -12,3 +12,5 @@
 	editor = vim
 [diff "color"]
 	commit = yellow
+[pull]
+	ff = only
