@@ -43,7 +43,7 @@ let mapleader=","                          "set <Leader> key to comma
 
 
 " Tags file
-set tags=/home/simon/Documents/Thesis/tags
+set tags=~/tags
 
 
 " Setting comment string for commentry to work
