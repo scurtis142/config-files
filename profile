@@ -82,9 +82,13 @@ alias 13-41="ssh akips@dev13-41"
 # Prompt
 PS1="\W$ "
 
+# Make it so shell scripts write input to stderr (I think)
 set -V
+
+# Set shell promtp to vi mode
 set -o vi
 
+# Rust stuff
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 export RTE_SDK=/home/simon/Documents/Thesis/dpdk-18.11.2/dpdk-stable-18.11.2/
