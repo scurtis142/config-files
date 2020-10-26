@@ -39,6 +39,7 @@ let mapleader=","                          "set <Leader> key to comma
 "NOTES:
 "gq to reformat text with correct textwidth
 "set list to see control characters (set nolist to undo)
+"read! cmd     to paste the output of cmd into the file
 
 
 " Tags file
