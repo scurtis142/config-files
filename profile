@@ -91,5 +91,3 @@ set -o vi
 # Rust stuff
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
-export RTE_SDK=/home/simon/Documents/Thesis/dpdk-18.11.2/dpdk-stable-18.11.2/
-export RTE_TARGET=x86_64-native-linuxapp-gcc
