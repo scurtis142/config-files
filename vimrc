@@ -54,22 +54,35 @@ autocmd FileType html           setl cms=<!--\%s\-->
 " Default is 4000
 set updatetime=100
 
-" gitgutter undo a hunk
-nmap <Leader>u :GitGutterUndoHunk<CR>
-
 "KEY MAPPINIGS
-"find trailing whitespace
-map <F2> /\s\+$<CR>
-
 " delete trailing whitespace
-nmap <Leader>1 :%s/\s\+$//g<CR>
+nmap <Leader>1 :%s/\s\+$//g<CR>:echo "removed trailing whitespace"<CR>
+
+"find trailing whitespace
+nmap <Leader>2 /\s\+$<CR>
+
+"toggle search highlight
+nmap <Leader>3 :set hls! <CR>
+
+"insert line errlog (ERR_DEBUG, 'got here 1.0\n')
+nmap <Leader>4 oerrlog ($ERR_USER, "got here 1.0");<ESC>==
+
+" reloading and opening vimrc
+nmap <Leader>5 :so $MYVIMRC<CR>
+nmap <Leader>6 :vs $MYVIMRC<CR>
+
+" Toggling GitGutter and GitGutter highlighting
+nmap <Leader>7 :GitGutterToggle<CR>
+nmap <Leader>8 :GitGutterLineHighlightsToggle<CR>
+
+" toggle underlining spelling mistakes
+nmap <Leader>9 :set spell!<CR>
 
 "display current time
 "map <F3> :echo 'Current time is '.strftime('%c')<CR>
-"toggle search highlight
-map <F3> <ESC>:set hls! <CR>
-"insert line errlog (ERR_DEBUG, 'got here 1.0\n')
-map <F4> <ESC>oerrlog ($ERR_USER, "got here 1.0");<ESC>==
+
+" gitgutter undo a hunk
+nmap <Leader>u :GitGutterUndoHunk<CR>
 
 " useful commands (save key presses)
 nmap c- ct_
@@ -89,10 +102,6 @@ imap jk <ESC>
 " colon more useful than semicolon
 nnoremap ; :
 
-" reloading and opening vimrc
-map <F5> <ESC>:so $MYVIMRC<CR>
-map <F6> <ESC>:vs $MYVIMRC<CR>
-
 " copy and paste line above
 nmap <C-p> yyp
 
@@ -102,13 +111,6 @@ nmap <C-\> :vs<CR><C-]>
 " moving splits right and left
 nmap <C-l> <C-w>8<
 nmap <C-k> <C-w>8>
-
-" Toggling GitGutter and GitGutter highlighting
-map <F7> <ESC>:GitGutterToggle<CR>
-map <F8> <ESC>:GitGutterLineHighlightsToggle<CR>
-
-" toggle underlining spelling mistakes
-map <F9> <ESC>:set spell!<CR>
 
 " see syntax group
 map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
