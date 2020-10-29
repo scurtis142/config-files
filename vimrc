@@ -11,7 +11,6 @@ if has("mouse")
    end
 endif
 
-
 "OPTIONS
 syntax on                                  "syntax highlighting on by default
 set number                                 "line numbers
@@ -126,3 +125,4 @@ map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " set colorcolumn=80 to set a vertical bar at 80 characters
+"gq to reformat text

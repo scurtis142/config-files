@@ -45,6 +45,28 @@ esac
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 
+# Format of an attribut tag:
+# \[\033[ATTRIBUTE; COLORm\]
+
+# https://vitux.com/how-to-customize-ubuntu-bash-prompt/
+# https://wiki.archlinux.org/index.php/Bash/Prompt_customization#Colors
+
+# See all avaliable colors with 
+# for C in {0..255}; do
+# >     tput setab $C
+# >     echo -n "$C "
+# > done
+
+# Common attributes
+# 0 Normal text
+# 1 Bold text
+# 2 Dim text
+# 4 Text underline
+# 5 Blinking text
+# 6 Reverse text & background colors
+# 8 Hidden text
+
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -90,10 +112,10 @@ fi
 # some more ls aliases
 alias moss='ssh s4431892@moss.labs.eait.uq.edu.au'
 alias laptop='ssh simon@simon-Aspire-F5-572G'
-alias docs='cd /home/simon/Documents && ls -l'
-alias thesisdir='cd /home/simon/Documents/Thesis && ls -l'
-alias thesispc='ssh simon@192.168.1.101'
-alias comp3400='cd /home/simon/Documents/COMP3400 && ls -l'
+alias docs='cd /home/simon/documents && clear && ls -l'
+alias thesisdir='cd /home/simon/documents/thesis && ls -l'
+alias thesispc='ssh simon@192.168.1.106'
+alias comp3400='cd /home/simon/documents/comp3400 && ls -l'
 
 # Some useful aliases
 alias h='fc -l'
@@ -104,7 +126,6 @@ alias l='ls -l'
 alias g='egrep -i'
 
 # Custom
-alias ls='ls -G'
 alias wkdir='cd ~/wk/akips'
 alias mibs='cd ~/wk/akips/mib'
 alias su='su -'
