@@ -43,6 +43,8 @@ let mapleader=","                          "set <Leader> key to comma
 
 " Tags file
 set tags=~/tags
+
+" Default line wrap
 au BufRead,BufNewFile *.md setlocal textwidth=100 "Set text to wrap at 100 characters for md files
 
 
