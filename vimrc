@@ -39,6 +39,7 @@ let mapleader=","                          "set <Leader> key to comma
 "gq to reformat text with correct textwidth
 "set list to see control characters (set nolist to undo)
 "read! cmd     to paste the output of cmd into the file
+" set colorcolumn=80 to set a vertical bar at 80 characters
 
 
 " Tags file
@@ -63,14 +64,8 @@ set updatetime=100
 " delete trailing whitespace
 nmap <Leader>1 :%s/\s\+$//g<CR>:echo "removed trailing whitespace"<CR>
 
-"find trailing whitespace
-nmap <Leader>2 /\s\+$<CR>
-
 "toggle search highlight
 nmap <Leader>3 :set hls! <CR>
-
-"insert line errlog (ERR_DEBUG, 'got here 1.0\n')
-nmap <Leader>4 oerrlog ($ERR_USER, "got here 1.0");<ESC>==
 
 " reloading and opening vimrc
 nmap <Leader>5 :so $MYVIMRC<CR>
@@ -82,9 +77,6 @@ nmap <Leader>8 :GitGutterLineHighlightsToggle<CR>
 
 " toggle underlining spelling mistakes
 nmap <Leader>9 :set spell!<CR>
-
-"display current time
-"map <F3> :echo 'Current time is '.strftime('%c')<CR>
 
 " gitgutter undo a hunk
 nmap <Leader>u :GitGutterUndoHunk<CR>
