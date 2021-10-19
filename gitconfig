@@ -1,6 +1,5 @@
 [user]
 	name = Simon Curtis
-	email = simon.curtis@akips.com
 [alias]
 	lns = log --name-status
 	prettylog = log --oneline --decorate --graph --all

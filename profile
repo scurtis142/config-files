@@ -39,13 +39,6 @@ alias ll='ls -laFo'
 alias l='ls -l'
 alias g='egrep -i'
 
-# Directories
-alias wkdir='cd ~/wk/akips'
-alias docs='cd ~/wk/docs'
-alias secondary='cd ~/wk/secondary-akips'
-alias mibs='cd ~/wk/akips/mib'
-alias func='cd ~/documents/COMP3400'
-
 #Files
 alias today='vim ~/documents/personal/today'
 alias things='vim ~/documents/personal/things'
@@ -74,33 +67,10 @@ alias office='libreoffice'
 alias chrome='chromium'
 alias checkping='ping 8.8.8.8'
 alias checkdns='ping google.com'
-
-# SSH
-alias build1="ssh snc@build1"
-alias fserv="ssh -t snc@intranet1 'cd /home/share && exec $SHELL'"
-alias uploads="ssh -t snc@intranet1 'cd /home/share/support/uploads && exec $SHELL'"
-alias intranet="ssh snc@intranet1"
-alias mitchell="ssh mitchell@mitchell"
-alias long="ssh lng@long"
-alias dev10="ssh vm@dev10"
-alias dev11="ssh vm@dev11"
-alias dev12="ssh vm@dev12"
-alias dev13="ssh vm@dev13"
-alias dev14="ssh vm@dev14"
-alias dev15="ssh vm@dev15"
-alias dev16="ssh vm@dev16"
-alias 11-40="ssh simulator@dev11-40"
-alias 11-41="ssh akips@dev11-41"
-alias 11-42="ssh akips@dev11-42"
-alias 11-43="ssh akips@dev11-43"
-alias 13-40="ssh simulator@dev13-40"
-alias 13-41="ssh akips@dev13-41"
+alias prnix='cd /home/simon/Documents/majestic && nix-shell'
 
 # Prompt
 PS1="\W$ "
-
-# Make it so shell scripts write input to stderr (I think)
-set -V
 
 # Set shell promtp to vi mode
 set -o vi

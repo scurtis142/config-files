@@ -126,10 +126,7 @@ alias l='ls -l'
 alias g='egrep -i'
 
 # Custom
-alias wkdir='cd ~/wk/akips'
-alias mibs='cd ~/wk/akips/mib'
 alias su='su -'
-alias ag='ag --ignore-dir mib'
 alias findf='find . -name'
 alias dater='date -r'
 alias weather='curl http://v2.wttr.in/Brisbane'
