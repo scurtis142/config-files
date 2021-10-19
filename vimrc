@@ -118,5 +118,21 @@ map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
-" set colorcolumn=80 to set a vertical bar at 80 characters
-"gq to reformat text
+
+" NERDTree 
+
+" Put cursor in NERDTree window
+nnoremap <leader>n :NERDTreeFocus<CR>
+
+" Toggle NERDTree
+noremap <C-n> :NERDTreeToggle<CR>
+
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
