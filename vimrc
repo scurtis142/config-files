@@ -1,5 +1,7 @@
 "COLOUR
+let g:gruvbox_italic = 1
 colorscheme gruvbox
+set t_Co=256
 set bg=dark
 
 "MOUSE
@@ -42,6 +44,12 @@ let mapleader=","                          "set <Leader> key to comma
 " set colorcolumn=80 to set a vertical bar at 80 characters
 
 
+"vim-plug
+ " call plug#begin('~/.vim/plugged')
+ " Plug 'elmcast/elm-vim'
+ " call plug#end()
+
+
 " Tags file
 set tags=~/tags
 
@@ -55,6 +63,7 @@ autocmd FileType vim            setl cms=\"\ %s
 autocmd FileType html           setl cms=<!--\%s\-->
 autocmd FileType haskell        setl cms=--\ %s
 autocmd FileType python         setl cms=#\ %s
+autocmd FileType javascript,js  setl cms=//\ %s
 
 " vim gitgutter recommended update time (to see changes immediatly)
 " Default is 4000
@@ -87,6 +96,7 @@ nmap c' ct"
 nmap c* ct*
 nmap c\ ct\
 nmap d' dt"
+nmap Y y$
 
 " shortcut to set text width
 cmap stw set textwidth=

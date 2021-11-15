@@ -132,9 +132,10 @@ alias dater='date -r'
 alias weather='curl http://v2.wttr.in/Brisbane'
 alias c='clear'
 alias cs='clear && git status'
-alias cl='clear && ls -l'
+alias cl='clear && ls -lh'
 alias cls='clear && ls'
 alias cla='clear && ls -lah'
+alias ctodo='clear && todo'
 
 
 
@@ -166,3 +167,7 @@ set -o vi
 
 export RTE_SDK=/home/simon/Documents/Thesis/dpdk-18.11.2/dpdk-stable-18.11.2/
 export RTE_TARGET=x86_64-native-linuxapp-gcc
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
