@@ -16,12 +16,12 @@ endif
 "OPTIONS
 syntax on                                  "syntax highlighting on by default
 set number                                 "line numbers
-set tabstop=3                              "tabs equal 3 spaces
-set shiftwidth=3                           "indents are 3 spaces
+set tabstop=4                              "tabs equal 3 spaces
+set shiftwidth=4                           "indents are 3 spaces
 set expandtab                              "tabs are counted as spaces
 set nocindent                              "don't use C syntax for indenting
 set autoindent                             "copy indent from current line when starting a new line
-set dictionary+=/usr/share/dict/words      "dictionary file ^x^k to use
+set dictionary+=/usr/share/dict/british-english      "dictionary file ^x^k to use
 set guifont=Luxi\ Mono\ 10                 "font
 set scrolloff=2                            "scrolls when 2 lines from edge
 set nowrap                                 "text dosent wrap
@@ -49,6 +49,8 @@ let mapleader=","                          "set <Leader> key to comma
  " Plug 'elmcast/elm-vim'
  " call plug#end()
 
+" Spellcheck
+set spelllang=en
 
 " Tags file
 set tags=~/tags
@@ -61,7 +63,7 @@ au BufRead,BufNewFile *.md setlocal textwidth=100 "Set text to wrap at 100 chara
 autocmd FileType perl,pm,sh,cfg,text setl cms=#\ %s
 autocmd FileType vim            setl cms=\"\ %s
 autocmd FileType html           setl cms=<!--\%s\-->
-autocmd FileType haskell        setl cms=--\ %s
+autocmd FileType haskell,elm    setl cms=--\ %s
 autocmd FileType python         setl cms=#\ %s
 autocmd FileType javascript,js  setl cms=//\ %s
 
@@ -114,7 +116,7 @@ nnoremap ; :
 nmap <C-p> yyp
 
 " opening tag location in new split
-nmap <C-\> :vs<CR><C-]>
+nmap <C-\> :vs<CR>gd
 
 " moving splits right and left
 nmap <C-l> <C-w>8<
@@ -196,9 +198,13 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" Restart language server
+nmap <leader>cr :CocRestart<CR><CR>:echo "Coc Restarted ! :)"<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
