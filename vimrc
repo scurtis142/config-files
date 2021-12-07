@@ -16,8 +16,8 @@ endif
 "OPTIONS
 syntax on                                  "syntax highlighting on by default
 set number                                 "line numbers
-set tabstop=4                              "tabs equal 3 spaces
-set shiftwidth=4                           "indents are 3 spaces
+set tabstop=4                              "tabs equal 4 spaces
+set shiftwidth=4                           "indents are 4 spaces
 set expandtab                              "tabs are counted as spaces
 set nocindent                              "don't use C syntax for indenting
 set autoindent                             "copy indent from current line when starting a new line
@@ -42,7 +42,17 @@ let mapleader=","                          "set <Leader> key to comma
 "set list to see control characters (set nolist to undo)
 "read! cmd     to paste the output of cmd into the file
 " set colorcolumn=80 to set a vertical bar at 80 characters
+" <C-w>T       move split to new tab
 
+"PLUGINS USED:
+"vim-gitgutter
+"coc.nvim
+"taboo.vim
+"vim-elm-syntax
+"vim-nerdtree-syntax-highlight
+"commentary
+"surround
+"nerdtree
 
 "vim-plug
  " call plug#begin('~/.vim/plugged')
@@ -63,9 +73,15 @@ au BufRead,BufNewFile *.md setlocal textwidth=100 "Set text to wrap at 100 chara
 autocmd FileType perl,pm,sh,cfg,text setl cms=#\ %s
 autocmd FileType vim            setl cms=\"\ %s
 autocmd FileType html           setl cms=<!--\%s\-->
-autocmd FileType haskell,elm    setl cms=--\ %s
+autocmd FileType haskell,elm,hs setl cms=--\ %s
 autocmd FileType python         setl cms=#\ %s
 autocmd FileType javascript,js  setl cms=//\ %s
+
+" Set indent width depending on haskell or elm file
+autocmd FileType haskell,hs set tabstop=2
+autocmd FileType haskell,hs set shiftwidth=2
+autocmd FileType elm set tabstop=4
+autocmd FileType elm set shiftwidth=4
 
 " vim gitgutter recommended update time (to see changes immediatly)
 " Default is 4000
@@ -84,7 +100,7 @@ nmap <Leader>6 :vs $MYVIMRC<CR>
 
 " Toggling GitGutter and GitGutter highlighting
 nmap <Leader>7 :GitGutterToggle<CR>
-nmap <Leader>8 :GitGutterLineHighlightsToggle<CR>
+nmap <Leader>8 :!fourmolu -i <afile><CR>
 
 " toggle underlining spelling mistakes
 nmap <Leader>9 :set spell!<CR>
@@ -99,6 +115,10 @@ nmap c* ct*
 nmap c\ ct\
 nmap d' dt"
 nmap Y y$
+
+" gcmt / taboo.vim
+" Renaming tabs
+nmap <Leader>tr :TabooRename
 
 " shortcut to set text width
 cmap stw set textwidth=
@@ -131,7 +151,7 @@ map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 
-" NERDTree 
+" NERDTree
 
 " Put cursor in NERDTree window
 nnoremap <leader>n :NERDTreeFocus<CR>
