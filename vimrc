@@ -16,8 +16,8 @@ endif
 "OPTIONS
 syntax on                                  "syntax highlighting on by default
 set number                                 "line numbers
-set tabstop=4                              "tabs equal 4 spaces
-set shiftwidth=4                           "indents are 4 spaces
+set tabstop=3                              "tabs equal 3 spaces
+set shiftwidth=3                           "indents are 3 spaces
 set expandtab                              "tabs are counted as spaces
 set nocindent                              "don't use C syntax for indenting
 set autoindent                             "copy indent from current line when starting a new line
@@ -85,7 +85,7 @@ autocmd FileType elm set shiftwidth=4
 
 " vim gitgutter recommended update time (to see changes immediatly)
 " Default is 4000
-set updatetime=100
+set updatetime=500
 
 "KEY MAPPINIGS
 " delete trailing whitespace
