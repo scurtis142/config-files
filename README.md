@@ -7,6 +7,10 @@
 - nvim
 - node
 - git
+- fzf
+
+### Installing fzf dependencies using Homebrew (need these before setting up vim)
+brew install fzf bat ripgrep the_silver_searcher perl universal-ctags
 
 ## NON-CRITICAL
 - pass
