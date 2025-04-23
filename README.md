@@ -18,6 +18,15 @@ brew install fzf bat ripgrep the_silver_searcher perl universal-ctags
 - chrome
 - firefox
 
+# Shell setup:
+- cp (or link) `profile` to `~/.profile`.
+- cp (or link) `bashrc` to `~/.bashrc`.
+
+The .profile should source the bashrc file if bashrc is the running shell, which we setup below.
+
+Set the default shell to be bash with `chsh -s /bin/bash` and restart the terminal application.
+In the terminal settings pick a default colour scheme.
+
 # Vim Setup
 
 ## Setting up files
