@@ -69,9 +69,6 @@ alias checkping='ping 8.8.8.8'
 alias checkdns='ping google.com'
 alias prnix='cd /home/simon/Documents/majestic && nix-shell'
 
-# Prompt
-PS1="\W$ "
-
 # Set shell promtp to vi mode
 set -o vi
 
