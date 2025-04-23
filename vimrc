@@ -37,27 +37,33 @@ set backspace=indent,eol,start             "backspace these characters by defaul
 set whichwrap+=h,l                         "h and l move to start and end of next & prev lines. NOTE: UNSAFE AND MAY BREAK PLUGINS
 let mapleader=","                          "set <Leader> key to comma
 
+" This will automatically install the vim-plug Plugin manager the first time
+" you load this .vimrc, if it is not already installed.
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Expecting vim-plug to be installed. See above.
+call plug#begin()
+
+" List plugins here
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', { 'branch': 'master', 'do': 'npm ci' }
+Plug 'airblade/vim-gitgutter'
+Plug 'gcmt/taboo.vim'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
+
 "NOTES:
 "gq to reformat text with correct textwidth
 "set list to see control characters (set nolist to undo)
 "read! cmd     to paste the output of cmd into the file
 " set colorcolumn=80 to set a vertical bar at 80 characters
 " <C-w>T       move split to new tab
-
-"PLUGINS USED:
-"vim-gitgutter
-"coc.nvim
-"taboo.vim
-"vim-elm-syntax
-"vim-nerdtree-syntax-highlight
-"commentary
-"surround
-"nerdtree
-
-"vim-plug
- " call plug#begin('~/.vim/plugged')
- " Plug 'elmcast/elm-vim'
- " call plug#end()
 
 " Spellcheck
 set spelllang=en
@@ -67,7 +73,6 @@ set tags=~/tags
 
 " Default line wrap
 au BufRead,BufNewFile *.md setlocal textwidth=100 "Set text to wrap at 100 characters for md files
-
 
 " Setting comment string for commentry to work
 autocmd FileType perl,pm,sh,cfg,text setl cms=#\ %s
