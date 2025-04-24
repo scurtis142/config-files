@@ -69,8 +69,13 @@ alias checkping='ping 8.8.8.8'
 alias checkdns='ping google.com'
 alias prnix='cd /home/simon/Documents/majestic && nix-shell'
 
+# nvim is preferred to vim now
+alias vim=nvim
+
 # Set shell promtp to vi mode
 set -o vi
+
+export NODE_EXTRA_CA_CERTS="/usr/local/Cellar/ca-certificates/2025-02-25/share/ca-certificates/cacert.pem"
 
 # Rust stuff
 export PATH="$HOME/.cargo/bin:$PATH"
