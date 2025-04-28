@@ -93,6 +93,10 @@ https://stackoverflow.com/a/73535165
 ## Language Server Setup
 
 ### Rust
+- Make sure you have the rust compiler installed. Best way to do this is with:
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+Then in vim run:
 `:CocInstall coc-rust-analyzer`
 
 ### Typescript
@@ -100,6 +104,13 @@ https://stackoverflow.com/a/73535165
 
 ### JSON
 `:CocInstall coc-json`
+
+### Perl
+- Ofc make sure Perl is installed, this should be done above if you configured fzf.
+- Run `sudo cpan -T Perl::LanguageServer` to install Perl LanguageServer and skip tests.
+- Then in vim run `:CocInstall coc-perl`
+- Then in your coc-settings.json make sure you have `"perl.enable":true`. This should be there by
+  default.
 
 # TMUX Setup
 
