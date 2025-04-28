@@ -38,8 +38,8 @@ named the new volume Akips and it can be found at `/Volumes/Akips`.
 
 Next create a link to that volume from your home directory, and then clone the `akips` repo in it.
 
-Next setup a command or script to sync your local copy of the code repo to build1:
-`rsync -azP --delete /Volumes/Akips/akips/ snc@build1.akips.com:akips-sync-tmp`
+Next setup a command or script to sync your local copy of the code repo to build1. For example:
+`rsync -azP --delete /Volumes/Akips/akips/ snc@build1.akips.com:your-remote-directory`
 Note you will have had to setup SSH keys for this to work well.
 
 # Mac theme
