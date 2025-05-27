@@ -131,7 +131,7 @@ nmap <Leader>tr :TabooRename
 " shortcut to set text width
 cmap stw set textwidth=
 
-cnoremap wa :!code-sync<CR><CR>:wa<CR>
+cnoremap wa<CR> :wa<CR>:!code-sync<CR><CR>
 
 " highlighting word under cursor dosen't jump to next match
 nmap * *N
