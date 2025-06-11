@@ -88,6 +88,9 @@ export NODE_EXTRA_CA_CERTS="/usr/local/Cellar/ca-certificates/2025-02-25/share/c
 # Rust stuff
 export PATH="$HOME/.cargo/env:$PATH"
 
+# Any personal binaries
+export PATH="$HOME/bin:$PATH"
+
 # Setting vim to be default editor
 VIMRUNTIME=/usr/bin
 EDITOR=/usr/bin/vim
