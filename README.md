@@ -105,6 +105,32 @@ Then in vim run:
 ### JSON
 `:CocInstall coc-json`
 
+### C
+You need to copy all the build machine include files onto your local machine
+E.g.
+`mkdir build/machine/includes`
+`scp -r snc@build1:/usr/include/* build/machine/includes`
+
+Install pcre:
+`brew install pcre`
+
+Then you need to make a `compile_flags.txt` in the akips top level directory with the following contents:
+```
+-I
+/Users/snc/build_machine_include
+-I
+/opt/homebrew/opt/pcre/include
+-I
+/Users/snc/akips/include
+```
+You probably want to put this in your local gitignore file.
+
+Then in vim
+`:CocInstall coc-clangd`
+
+Note: You will still get errors shown (especially with macros) but jump to definition should still
+work.
+
 ### Perl
 - Ofc make sure Perl is installed, this should be done above if you configured fzf.
 - Run `sudo cpan -T Perl::LanguageServer` to install Perl LanguageServer and skip tests.
