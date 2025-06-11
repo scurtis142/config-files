@@ -58,6 +58,7 @@ Plug 'gcmt/taboo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
