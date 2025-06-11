@@ -69,6 +69,14 @@ alias checkping='ping 8.8.8.8'
 alias checkdns='ping google.com'
 alias prnix='cd /home/simon/Documents/majestic && nix-shell'
 
+#akips
+alias build1='ssh snc@build1'
+alias snc1='ssh akips@snc-nms1'
+alias snc2='ssh akips@snc-nms2'
+alias snc3='ssh akips@snc-nms3'
+alias sncint='ssh akips@snc-int'
+alias sim1='ssh simulator@snc-sim1'
+
 # nvim is preferred to vim now
 alias vim=nvim
 
