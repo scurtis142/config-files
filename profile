@@ -68,6 +68,7 @@ alias chrome='chromium'
 alias checkping='ping 8.8.8.8'
 alias checkdns='ping google.com'
 alias prnix='cd /home/simon/Documents/majestic && nix-shell'
+alias gti='git'
 
 #akips
 alias build1='ssh snc@build1'
