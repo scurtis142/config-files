@@ -162,6 +162,8 @@ map <C-h> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+" Search for visually selected text using Ag
+vnoremap <silent> <leader>f y:Ag <C-r>"<CR>
 
 " NERDTree
 
