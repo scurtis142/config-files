@@ -30,6 +30,7 @@ Set the default shell to be bash with `chsh -s /bin/bash` and restart the termin
 In the terminal settings pick a default colour scheme.
 
 # Setup SSH Keys
+- With both personal github and work git accounts.
 
 # Setup for Akips code
 Open "Disk Utility" and you want to be on the 'Macintosh HD - Data' APFS startup snapshot one.
