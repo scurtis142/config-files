@@ -84,7 +84,7 @@ alias vim=nvim
 # Set shell promtp to vi mode
 set -o vi
 
-export NODE_EXTRA_CA_CERTS="/usr/local/Cellar/ca-certificates/2025-02-25/share/ca-certificates/cacert.pem"
+# export NODE_EXTRA_CA_CERTS="/usr/local/Cellar/ca-certificates/2025-02-25/share/ca-certificates/cacert.pem"
 
 # Rust stuff
 export PATH="$HOME/.cargo/env:$PATH"
