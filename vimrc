@@ -184,6 +184,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 
+" Run cargo fmt on save
+autocmd BufWritePost *.rs silent! execute '!rustfmt %' | edit!
+
+
 "coc.nvim setup
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
