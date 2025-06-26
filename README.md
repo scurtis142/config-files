@@ -147,6 +147,17 @@ work.
 - Tree tabs
 - bookmarks
 
+# Pass setup
+- Install pass with `brew install pass`
+- You will need to aquire the secret GPG key from an existing machine in the form of `pass.pgp`
+- Import the key with `gpg --import pass.pgp`
+- Grab the GPG ID of the imported key with `gpg --list-keys`
+- `pass init <gpg-id>`
+- `pass git init`
+- `pass git remote add origin git@github.com:scurtis142/passwords.git`
+- `pass git pull`
+- `pass checkout master`
+
 # Other setup:
 - Setup shortcuts if needed
     - Command-x for new terminal
